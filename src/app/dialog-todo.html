@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+	<p> {{data.id ? 'Edit': 'Add new'}}</p>
+	<mat-form-field style="width: 100%">
+		<input matInput [formControl]="title" placeholder="Title">
+		<mat-error *ngIf="title.invalid">Title is required</mat-error>
+	</mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+	<button mat-button (click)="cancel()">Cancel</button>
+	<button mat-button (click)="save()"  cdkFocusInitial>Save</button>
+</div>
